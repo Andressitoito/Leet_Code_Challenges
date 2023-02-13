@@ -40,7 +40,7 @@ var twoSum = function (nums, target) {
 				const num2 = nums[j];
 
 				if (index === j) {
-					console.log("SON IGUALES", num1, num2);
+					console.log("EQUALS", num1, num2);
 					continue;
 				} else {
 					if (num1 + num2 === target) {
