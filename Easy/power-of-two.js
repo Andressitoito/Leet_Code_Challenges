@@ -6,21 +6,23 @@ An integer n is a power of two, if there exists an integer x such that n == 2x. 
  * @return {boolean}
  */
 var isPowerOfTwo = function (n) {
- if (n === 0 || n === 1) {
-		return true;
-	}
+ if (n < 1) {
+  return false;
+ } else if (n === 1) {
+  return true
+ }
 
-	let num = n;
-	for (let i = 0; i < n; i++) {
-		if (num === 2) {
-			return true;
-		}
-		num = num / 2;
-		if (num % 2 !== 0) {
-			return false;
-		}
-	}
+ let num = n;
+ for (let i = 0; i < n; i++) {
+  if (num === 2) {
+   return true;
+  }
+  num = num / 2;
+  if (num % 2 !== 0) {
+   return false;
+  }
+ }
 };
 
 
-console.log(isPowerOfTwo(2048))
+console.log(isPowerOfTwo(0))
