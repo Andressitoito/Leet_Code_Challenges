@@ -20,16 +20,17 @@ var arithmeticTriplets = function (nums, diff) {
 				continue;
 			}
 
-			if (init_num - nums[j] === diff) {
+			const second_num = nums[j];
+
+			if (init_num - second_num === diff) {
 				for (let k = j; k >= 0; k--) {
-					if (nums[j] - nums[k] === diff) {
+					if (second_num - nums[k] === diff) {
 						triplets++;
 					}
 				}
 			}
 		}
 	}
-
 	console.log("triplets ", triplets);
 
 	return triplets;
