@@ -30,8 +30,11 @@ var mergeAlternately = function (word1, word2) {
  let cutString = strings[1].slice(word1.length);
  
  let result = joined_tupple + cutString;
+
+ console.log(result)
  
  return result;
 };
+
 mergeAlternately("135", "246");
 
