@@ -5,6 +5,46 @@ Letters are case sensitive, for example, "Aa" is not considered a palindrome her
  * @param {string} s
  * @return {number}
  */
+///////////////////////////////////////
+// NEW APPROACH 2.0
+///////////////////////////////////////
+var longestPalindrome = function (s) {
+	const chars = new Map();
+
+	for (let i = 0; i < s.length; i++) {
+		const char = s[i];
+
+		if (chars.get(char)) {
+			chars.set(char, chars.get(char) + 1);
+		} else {
+			chars.set(char, 1);
+		}
+	}
+
+	let sum = 0;
+	let once = 0;
+
+	for (const char of chars.values()) {
+		if (char % 2 === 0) {
+			sum += char;
+		} else {
+			sum += char - 1;
+			once = 1;
+		}
+	}
+
+	const answer = sum + once;
+
+	console.log(answer);
+
+	return answer;
+};
+
+longestPalindrome("abccccdd");
+
+///////////////////////////////////////
+// ORIGINAL APPROACH 1.0
+///////////////////////////////////////
 var longestPalindrome = function (s) {
 	const same = s.split("").every((char) => char == s[0]);
 
