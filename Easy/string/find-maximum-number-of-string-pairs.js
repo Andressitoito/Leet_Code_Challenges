@@ -18,7 +18,9 @@ var maximumNumberOfStringPairs = function (words) {
 		const elI = words[i];
 
 		for (let j = i + 1; j < words.length; j++) {
-			const elJR = words[j][1] + words[j][0];
+			const w1 = words[j][1];
+			const w2 = words[j][0];
+			const elJR = w1 + w2;
 
 			if (elI === elJR) {
 				pairs++;
@@ -31,4 +33,3 @@ var maximumNumberOfStringPairs = function (words) {
 	return pairs;
 };
 
-maximumNumberOfStringPairs(["cd", "ac", "dc", "ca", "zz"]);
