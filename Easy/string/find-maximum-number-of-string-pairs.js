@@ -33,3 +33,4 @@ var maximumNumberOfStringPairs = function (words) {
 	return pairs;
 };
 
+maximumNumberOfStringPairs(["cd", "ac", "dc", "ca", "zz"]);
