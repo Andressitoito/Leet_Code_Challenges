@@ -13,39 +13,25 @@ You are given an integer income representing the amount of money you earned. Ret
  * @return {number}
  */
 var calculateTax = function (brackets, income) {
-	console.log("bracket, income ", brackets, income);
-
 	let last = 0;
 	let remaining = income;
 	let taxes = 0;
 
 	for (let i = 0; i < brackets.length; i++) {
-		console.log("/////////////////////////////////// ");
 		const upper = brackets[i][0];
 		const tax = brackets[i][1];
-
-		console.log("upper ", upper);
-		console.log("tax ", tax);
 		const toTax = upper - last;
 
 		if (remaining - toTax > 0) {
-			console.log("to tax ======> ", toTax);
 			remaining -= toTax;
 			let applyTax = (toTax * tax) / 100;
-			console.log("APPLY TAX                  => ", applyTax, taxes)
 			taxes += applyTax;
 			last = upper;
 		} else {
 			remaining;
-			console.log("ENTer ELSE ------------------------------");
 
 			let applyTax = (remaining * tax) / 100;
-			console.log("APPLY TAX                  => ", applyTax, taxes)
 			taxes += applyTax;
-			console.log("remaining ", remaining, applyTax);
-
-			console.log("to tax ======> ", toTax);
-
 			break;
 		}
 	}
