@@ -7,10 +7,7 @@ Each letter in magazine can only be used once in ransomNote. */
  * @return {boolean}
  */
 var canConstruct = function (ransomNote, magazine) {
-	console.log("ransomNote, magazine ", ransomNote, magazine);
-
 	let response = true;
-
 	const ransomNoteObj = {};
 	const magazineObj = {};
 
@@ -33,9 +30,6 @@ var canConstruct = function (ransomNote, magazine) {
 			magazineObj[char] = 1;
 		}
 	}
-
-	console.log("ransomNoteObj ", ransomNoteObj);
-	console.log("magazine ", magazineObj);
 
 	for (const char in ransomNoteObj) {
 		console.log("//////////////////////// ");
