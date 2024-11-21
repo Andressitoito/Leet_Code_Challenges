@@ -32,18 +32,12 @@ var canConstruct = function (ransomNote, magazine) {
 	}
 
 	for (const char in ransomNoteObj) {
-		console.log("//////////////////////// ");
-		console.log("magazineObj char    --- ", char, magazineObj[char]);
-		console.log("ransomNoteObj char  --- ", char, ransomNoteObj[char]);
-
 		if (magazineObj[char]) {
 			if (magazineObj[char] < ransomNoteObj[char]) {
-				console.log("\x1b[46m cannot be done \x1b[0m", false);
     response = false
     break
 			}
 		} else {
-			console.log("\x1b[46m cannot be done \x1b[0m", false);
 			response = false;
    break
 		}
