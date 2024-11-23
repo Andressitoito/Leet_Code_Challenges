@@ -9,35 +9,45 @@ Return the resulting string after removing all digits. */
  * @return {string}
  */
 var clearDigits = function (s) {
- console.log("s", s);
+	console.log("s", s);
+	const splittedString = s.split("");
+	console.log("s", splittedString);
 
- for (let i = 0; i < s.length; i++) {
-  const char = s[i];
+	for (let i = 0; i < splittedString.length; i++) {
+		const char = splittedString[i];
 
-  console.log("char", char);
+		console.log("char", char);
 
-  const parsedNum = parseInt(char)
+		const parsedNum = parseInt(char);
 
-  if (!isNaN(parsedNum)) {
-   console.log("not undefined ", char, parseInt(char));
+		if (!isNaN(parsedNum)) {
+			console.log("not undefined ", char, parseInt(char));
 
-   for (let j = i - 1; j >= 0; j--) {
-    const char_del = s[j]
+			for (let j = i - 1; j >= 0; j--) {
+				const char_del = splittedString[j];
 
-    console.log("char_del ", char_del)
+				console.log("char_del ", char_del);
 
-    const parsedChar = parseInt(char_del)
+				const parsedChar = parseInt(char_del);
 
-    if (isNaN(parsedChar)) {
-     console.log("not undefined ", char, parseInt(char));
-    }
+				if (isNaN(parsedChar)) {
+					console.log("not undefined ", char, parseInt(char));
+					splittedString.splice(i, 1);
+					splittedString.splice(j, 1);
+					i--;
+					break;
+				}
+			}
+		}
+	}
 
-   };
+	console.log("splittedString ", splittedString);
 
+	const response = splittedString.join("");
 
+	console.log("response ", response);
 
-  }
- }
+	return response;
 };
 
 clearDigits("cb34");
