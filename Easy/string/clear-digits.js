@@ -34,7 +34,8 @@ var clearDigits = function (s) {
 					console.log("not undefined ", char, parseInt(char));
 					splittedString.splice(i, 1);
 					splittedString.splice(j, 1);
-					i--;
+
+					i = i - 2;
 					break;
 				}
 			}
