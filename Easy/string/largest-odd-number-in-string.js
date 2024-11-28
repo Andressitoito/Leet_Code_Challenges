@@ -29,9 +29,13 @@ var largestOddNumber = function (num) {
 
  response = response.toString()
 
+ if(response === '0') {
+  response = ''
+ }
+
  console.log("\x1b[35mresponse \x1b[0m", response)
 
  return response
 };
 
-largestOddNumber("35427");
+largestOddNumber("12312");
