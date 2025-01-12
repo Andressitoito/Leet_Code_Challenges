@@ -61,6 +61,8 @@ var kthDistinct = function (arr, k) {
 
 	if (kthNum.length < k) {
 		console.log("kth response = ''", k)
+
+		return ""
 	}
 
 	const response = kthNum[k - 1]
