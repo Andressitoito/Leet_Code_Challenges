@@ -14,14 +14,11 @@ substrings of s that satisfy the k-constraint. */
 var countKConstraintSubstrings = function (s, k) {
 	console.log("s k ", s, k);
 
-	const substrings = [];
 	let response = 0;
 
 	let count = 0;
 
 	for (let i = s.length - 1; i >= 0; i--) {
-		const index = s[i];
-
 		for (let j = i + 1; j >= 0; j--) {
 			count++;
 			console.log("count ", count);
@@ -48,7 +45,7 @@ var countKConstraintSubstrings = function (s, k) {
 	}
   
 	console.log("response ", response);
-  
+
   return response;
 };
 
