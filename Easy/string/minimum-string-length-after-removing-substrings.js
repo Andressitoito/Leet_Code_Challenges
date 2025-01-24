@@ -38,12 +38,12 @@ var minLength = function (s) {
         continue
       }
 
+      keep = false
 
     };
 
     console.log("\x1b[35m%s\x1b[0m ", "Llego aca abajo")
 
-    keep = false
 
 
   }
